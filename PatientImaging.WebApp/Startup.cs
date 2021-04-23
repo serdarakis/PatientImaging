@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PatientImaging.WebApp.Infastructure.Hubs;
 
 namespace PatientImaging.WebApp
 {
@@ -25,6 +26,8 @@ namespace PatientImaging.WebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +55,7 @@ namespace PatientImaging.WebApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapHub<PatientHub>("/patientHub");
             });
 
             app.UseSpa(spa =>

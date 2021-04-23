@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.WebApp", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.Messages", "PatientImaging.Messages\PatientImaging.Messages.csproj", "{84550128-421C-4807-803C-D8BDC67D42E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.FileTracker", "PatientImaging.FileTracker\PatientImaging.FileTracker.csproj", "{6AC7B3F4-CE97-4325-B1C3-7BF9C8DB523E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.FileTracker", "PatientImaging.FileTracker\PatientImaging.FileTracker.csproj", "{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{84550128-421C-4807-803C-D8BDC67D42E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84550128-421C-4807-803C-D8BDC67D42E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84550128-421C-4807-803C-D8BDC67D42E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AC7B3F4-CE97-4325-B1C3-7BF9C8DB523E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AC7B3F4-CE97-4325-B1C3-7BF9C8DB523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AC7B3F4-CE97-4325-B1C3-7BF9C8DB523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AC7B3F4-CE97-4325-B1C3-7BF9C8DB523E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
