@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patient>
+  <PolyclinicCode>AF21</PolyclinicCode>
+  <Doctor>
+    <RegistrationNumber>99874621</RegistrationNumber>
+    <Name>Serdar</Name>
+    <Surname>Akis</Surname>
+  </Doctor>
+  <DateOfBirth>12-45-1991</DateOfBirth>
+  <Gender>1</Gender>
+  <IdentityNumber>12345678912</IdentityNumber>
+  <PhoneNumber>1234567890</PhoneNumber>
+  <VisitDate>23-04-2021</VisitDate>
+  <NextVisitDate>25-04-2021</NextVisitDate>
+  <DoctorNote>This is an ordinary text</DoctorNote>
+</Patient>

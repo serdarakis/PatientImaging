@@ -1,9 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using PatientImaging.FileTracker.Services;
 
 namespace PatientImaging.FileTracker
 {
@@ -16,10 +13,11 @@ namespace PatientImaging.FileTracker
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureServices((hostContext, services) => {
+                .ConfigureServices((hostContext, services) =>
+                {
                     services.AddHostedService<FileTracker>();
-                    //services.AddSignalR();
-                }
-                );
+                    services.AddSingleton<IFileService, FileService>();
+                    services.AddSingleton<IMessageService, MessageService>();
+                });
     }
 }
