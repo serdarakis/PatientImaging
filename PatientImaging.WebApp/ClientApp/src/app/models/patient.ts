@@ -10,5 +10,4 @@ export interface Patient {
   visitDate: string,
   nextVisitDate: string,
   doctorNote: string,
-
 }

@@ -20,19 +20,19 @@ export class PatientAddComponent implements OnInit {
 
   ngOnInit() {
     this.registerPatientForm = this.formBuilder.group({
-      polyclinicCode: ['1234', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      docRegistrationNumber: ['12346789', [Validators.required, Validators.pattern("[0-9]{8}")]],
-      docName: ['docname', Validators.required],
-      docSurname: ['docsurname', Validators.required],
-      name: ['name', Validators.required],
-      surname: ['surname', Validators.required],
+      polyclinicCode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      docRegistrationNumber: ['', [Validators.required, Validators.pattern("[0-9]{8}")]],
+      docName: ['', Validators.required],
+      docSurname: ['', Validators.required],
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
       dateOfBirth: [null, Validators.required],
       gender: [3, Validators.required],
-      identityNumber: ['12345678912', [Validators.required, Validators.pattern("[0-9]{11}")]],
-      phoneNumber: ['5056673534', [Validators.required, Validators.pattern("[0-9]{10}")]],
+      identityNumber: ['', [Validators.required, Validators.pattern("[0-9]{11}")]],
+      phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
       visitDate: [null, Validators.required],
       nextVisitDate: [null],
-      doctorsNote: ['doc note', Validators.maxLength(1000)],
+      doctorsNote: ['', Validators.maxLength(1000)],
     });
   }
 

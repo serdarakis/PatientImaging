@@ -1,0 +1,25 @@
+
+<p *ngIf="!patientList"><em>Loading...</em></p>
+
+
+<a class="btn btn-primary mr-1" href="/patient/add">New</a>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="patientList">
+  <thead>
+    <tr>
+      <th>Identity</th>
+      <th>Polyclinic Code</th>
+      <th>Birthdate</th>
+      <th>Doctor Name</th>
+      <th>Doctor Surname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patientList">
+      <td>{{ patient.identityNumber }}</td>
+      <td>{{ patient.polyclinicCode }}</td>
+      <td>{{ patient.dateOfBirth }}</td>
+      <td>{{ patient.doctor.name }}</td>
+      <td>{{ patient.doctor.surname }}</td>
+    </tr>
+  </tbody>
+</table>

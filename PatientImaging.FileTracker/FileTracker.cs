@@ -55,6 +55,7 @@ namespace PatientImaging.FileTracker
                 {
                     PatientXmlModel patient = await _fileService.ParseXMLFile<PatientXmlModel>(file);
                     await _messageService.SendPatient(patient);
+                    _fileService.SetAsTransfered(file);
                 }
                 catch (Exception e)
                 {

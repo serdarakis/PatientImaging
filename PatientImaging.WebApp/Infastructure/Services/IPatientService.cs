@@ -17,6 +17,8 @@ namespace PatientImaging.WebApp.Infastructure.Services
 
     internal class PatientService : IPatientService
     {
+
+        //TODO Add db
         List<Patient> patients = new List<Patient>();
         private IHubContext<PatientHub, IPatientHub> _hubContext;
 

@@ -10,13 +10,14 @@ namespace PatientImaging.FileTracker.Services
     {
         List<string> GetNewFilesPath();
         Task<T> ParseXMLFile<T>(string path);
+        void SetAsTransfered(string path);
     }
 
     internal class FileService : IFileService
     {
         public List<string> GetNewFilesPath()
         {
-            return Directory.GetFiles("Files").ToList();
+            return Directory.GetFiles("Files").Where(file => !file.EndsWith('_')).ToList();
         }
 
         public async Task<T> ParseXMLFile<T>(string path)
@@ -28,6 +29,12 @@ namespace PatientImaging.FileTracker.Services
                 T parsedData = (T)(serializer.Deserialize(reader));
                 return parsedData;
             }
+        }
+
+        public void SetAsTransfered(string path)
+        {
+            if(File.Exists(path))
+                System.IO.File.Move(path, path+"_");
         }
     }
 }

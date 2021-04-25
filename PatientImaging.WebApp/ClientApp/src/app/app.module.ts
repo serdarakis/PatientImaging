@@ -5,11 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { PatientListComponent } from './patient-list/patient-list.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
 import { PatientAddComponent } from './components/patient-add/patient-add.component';
 
 @NgModule({
@@ -17,8 +15,6 @@ import { PatientAddComponent } from './components/patient-add/patient-add.compon
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     PatientListComponent,
     PatientAddComponent
   ],
@@ -29,8 +25,6 @@ import { PatientAddComponent } from './components/patient-add/patient-add.compon
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'patient', component: PatientListComponent },
       { path: 'patient/add', component: PatientAddComponent },
     ])
