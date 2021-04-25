@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace PatientImaging.Messages
 {
@@ -13,7 +12,7 @@ namespace PatientImaging.Messages
         public string IdentityNumber { get; }
         public string PhoneNumber { get; }
         public DateTime VisitDate { get; }
-        public DateTime NextVisitDate { get; }
+        public DateTime? NextVisitDate { get; }
         public string DoctorNote { get; }
 
         public Patient(string polyclinicCode,
@@ -23,13 +22,13 @@ namespace PatientImaging.Messages
             string identityNumber,
             string phoneNumber,
             DateTime visitDate,
-            DateTime nextVisitDate,
+            DateTime? nextVisitDate,
             string doctorNote)
         {
             PolyclinicCode = polyclinicCode;
             Doctor = doctor;
             DateOfBirth = dateOfBirth;
-            Gender = Gender;
+            Gender = gender;
             IdentityNumber = identityNumber;
             PhoneNumber = phoneNumber;
             VisitDate = visitDate;

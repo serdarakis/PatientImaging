@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using PatientImaging.Messages;
 using PatientImaging.WebApp.Infastructure.Services;
+using PatientImaging.WebApp.Models.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace PatientImaging.WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task Insert(Patient patient)
+        public async Task Insert([FromBody] PatientViewModel patient)
         {
             await _patientService.InsertPatient(patient);
         }

@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace PatientImaging.Messages
 {
     public class Doctor

@@ -1,4 +1,129 @@
-<p>patient-add works!</p>
+<div class="card m-3">
+  <h5 class="card-header">Add New Patient</h5>
+  <div class="card-body">
+    <form [formGroup]="registerPatientForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Polyclinic Code</label>
+          <input type="text" formControlName="polyclinicCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.polyclinicCode.errors }" />
+          <div *ngIf="submitted && f.polyclinicCode.errors" class="invalid-feedback">
+            <div *ngIf="f.polyclinicCode.errors.required">Polyclinic Code</div>
+            <div *ngIf="f.polyclinicCode.errors">Polyclinic Code must be 4 char</div>
 
-<input type="text" [(ngModel)]="identityNumber">
-<button class="btn btn-primary" (click)="addPatient()">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header">Doctor</h5>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Registration Number</label>
+              <input type="text" formControlName="docRegistrationNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.docRegistrationNumber.errors }" />
+              <div *ngIf="submitted && f.docRegistrationNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.docRegistrationNumber.errors.required">Registration Number is required</div>
+                <div *ngIf="f.docRegistrationNumber.errors.pattern">Registration Number must be 8 digits</div>
+              </div>
+            </div>
+            <div class="form-group col">
+              <label>Name</label>
+              <input type="text" formControlName="docName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.docName.errors }" />
+              <div *ngIf="submitted && f.docName.errors" class="invalid-feedback">
+                <div *ngIf="f.docName.errors.required">Name is required</div>
+              </div>
+            </div>
+
+            <div class="form-group col">
+              <label>Surname</label>
+              <input type="text" formControlName="docSurname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.docSurname.errors }" />
+              <div *ngIf="submitted && f.docSurname.errors" class="invalid-feedback">
+                <div *ngIf="f.docSurname.required">Surname is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Name</label>
+          <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col">
+          <label>Surname</label>
+          <input type="text" formControlName="surname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" />
+          <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+            <div *ngIf="f.surname.required">Surname is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Birth Date</label>
+          <input type="date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+          <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="f.dateOfBirth.errors.required">Birth date is required</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Gender</label>
+          <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+            <option value="1">Female</option>
+            <option value="2">Male</option>
+            <option value="3">UnSelected</option>
+          </select>
+          <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+            <div *ngIf="f.gender.errors.required">Gender is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Identity Number</label>
+          <input type="text" formControlName="identityNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identityNumber.errors }" />
+          <div *ngIf="submitted && f.identityNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.identityNumber.errors.required">Identity Number is required</div>
+            <div *ngIf="f.identityNumber.errors.pattern">Identity Number must be 11 digits</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Phone Number</label>
+          <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+          <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+            <div *ngIf="f.phoneNumber.errors.pattern">Phone Number must be 10 digits</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Visit Date</label>
+          <input type="date" formControlName="visitDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.visitDate.errors }" />
+          <div *ngIf="submitted && f.visitDate.errors" class="invalid-feedback">
+            <div *ngIf="f.visitDate.errors.required">Visit date is required</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Next Visit Date</label>
+          <input type="date" formControlName="nextVisitDate" class="form-control" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label>Note</label>
+          <textarea type="text" formControlName="doctorsNote" class="form-control" rows="4" cols="50" [ngClass]="{ 'is-invalid': submitted && f.doctorsNote.errors }"></textarea>
+          <div *ngIf="submitted && f.doctorsNote.errors" class="invalid-feedback">
+            <div *ngIf="f.doctorsNote.errors.maxLength">Note can be max 1000 char</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-1">Register</button>
+        <button class="btn btn-secondary" type="reset" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

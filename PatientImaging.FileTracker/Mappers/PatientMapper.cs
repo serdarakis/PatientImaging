@@ -1,5 +1,4 @@
-﻿
-using PatientImaging.FileTracker.Models;
+﻿using PatientImaging.FileTracker.Models;
 
 namespace PatientImaging.FileTracker.Mappers
 {
@@ -11,7 +10,7 @@ namespace PatientImaging.FileTracker.Mappers
                 patient.polyclinicCodeField,
                 DoctorMapper.Map(patient.doctorField),
                 patient.dateOfBirthField,
-                patient.genderField,
+                GenderMapper.Map(patient.genderField),
                 patient.identityNumberField,
                 patient.phoneNumberField,
                 patient.visitDateField,

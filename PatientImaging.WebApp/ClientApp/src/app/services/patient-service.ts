@@ -17,6 +17,7 @@ export class PatientService {
   }
 
   public insertPatient(patient: Patient): Observable<Object> {
+    console.log(patient);
     return this.http.post(this._baseUrl + "patient", patient);
   }
 }
