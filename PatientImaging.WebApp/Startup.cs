@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PatientImaging.WebApp.Infastructure.Hubs;
+using PatientImaging.WebApp.Infastructure.Services;
 
 namespace PatientImaging.WebApp
 {
@@ -26,7 +27,7 @@ namespace PatientImaging.WebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
+            services.AddSingleton<IPatientService, PatientService>();
             services.AddSignalR();
         }
 

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.WebApp", "PatientImaging.WebApp\PatientImaging.WebApp.csproj", "{5105FE2D-4240-4967-AEC1-E1D538C7A3F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientImaging.WebApp", "PatientImaging.WebApp\PatientImaging.WebApp.csproj", "{5105FE2D-4240-4967-AEC1-E1D538C7A3F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.Messages", "PatientImaging.Messages\PatientImaging.Messages.csproj", "{84550128-421C-4807-803C-D8BDC67D42E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientImaging.Messages", "PatientImaging.Messages\PatientImaging.Messages.csproj", "{84550128-421C-4807-803C-D8BDC67D42E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.FileTracker", "PatientImaging.FileTracker\PatientImaging.FileTracker.csproj", "{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientImaging.FileTracker", "PatientImaging.FileTracker\PatientImaging.FileTracker.csproj", "{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientImaging.Helpers", "PatientImaging.Helpers\PatientImaging.Helpers.csproj", "{EBF93FF0-9F0D-4CBE-BFCA-7AE6DC484385}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EF8EE92-B63B-48E0-B2F7-0A1A578510E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF93FF0-9F0D-4CBE-BFCA-7AE6DC484385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF93FF0-9F0D-4CBE-BFCA-7AE6DC484385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF93FF0-9F0D-4CBE-BFCA-7AE6DC484385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF93FF0-9F0D-4CBE-BFCA-7AE6DC484385}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

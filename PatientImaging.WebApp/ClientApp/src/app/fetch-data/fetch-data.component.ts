@@ -15,10 +15,7 @@ export class FetchDataComponent implements OnInit {
     }, error => console.error(error));
   }
   ngOnInit(): void {
-    console.log("Serdar")
-   this.messageService.messageReceived.subscribe((message:String) => {
-      console.log(message)
-   });
+  
   }
 
   

@@ -1,11 +1,12 @@
-﻿{
+{
   "profiles": {
     "PatientImaging.FileTracker": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
-      }
+        "DOTNET_ENVIRONMENT": "Development",
+        "HubConnectionUrl": "http://localhost:13391/patientHub"
+      },
+      "dotnetRunMessages": "true"
     }
   }
 }

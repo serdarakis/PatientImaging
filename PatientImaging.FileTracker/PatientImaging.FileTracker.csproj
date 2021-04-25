@@ -11,10 +11,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PatientImaging.Helpers\PatientImaging.Helpers.csproj" />
     <ProjectReference Include="..\PatientImaging.Messages\PatientImaging.Messages.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Files\Patient5.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Patient4.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Patient3.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Patient2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Files\Patient1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

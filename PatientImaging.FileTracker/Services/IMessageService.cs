@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
+using PatientImaging.FileTracker.Mappers;
 using PatientImaging.FileTracker.Models;
-using System;
 using System.Threading.Tasks;
 
 namespace PatientImaging.FileTracker.Services
@@ -9,24 +9,17 @@ namespace PatientImaging.FileTracker.Services
     {
         Task Start();
         Task Stop();
-        Task SendPatient(Patient patient);
+        Task SendPatient(PatientXmlModel patient);
     }
 
     internal class MessageService : IMessageService
     {
         private const string MessageName = "PatientFound";
-        private HubConnection _hub;
+        private readonly HubConnection _hub;
 
-        public MessageService()
+        public MessageService(IHubConnectionBuilder hubConnectionBuilder)
         {
-            var hubBuilder = new HubConnectionBuilder();
-            hubBuilder.WithUrl("http://localhost:13391/patientHub");
-            hubBuilder.WithAutomaticReconnect();
-            _hub = hubBuilder.Build();
-            _hub.On<Messages.Patient>("ReceiveMessage", (patient) =>
-             {
-                 Console.WriteLine(patient.Doctor.Name);
-             });
+            _hub = hubConnectionBuilder.Build();
         }
 
         public Task Start() => _hub.StartAsync();
@@ -36,18 +29,9 @@ namespace PatientImaging.FileTracker.Services
             await _hub.DisposeAsync();
         }
 
-        public async Task SendPatient(Patient patient)
+        public async Task SendPatient(PatientXmlModel patient)
         {
-            var data = new PatientImaging.Messages.Patient
-            {
-                Gender = patient.Gender,
-                IdentityNumber = patient.IdentityNumber,
-                Doctor = new Messages.Doctor
-                {
-                    Name = patient.Doctor.Name
-                }
-            };
-            await _hub.SendAsync(MessageName, data);
+            await _hub.SendAsync(MessageName, PatientMapper.Map(patient));
         }
     }
 }

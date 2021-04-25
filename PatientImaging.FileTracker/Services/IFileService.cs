@@ -1,7 +1,4 @@
-﻿
-
-using PatientImaging.FileTracker.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +28,6 @@ namespace PatientImaging.FileTracker.Services
                 T parsedData = (T)(serializer.Deserialize(reader));
                 return parsedData;
             }
-            
         }
     }
 }

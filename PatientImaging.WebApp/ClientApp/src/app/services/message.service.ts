@@ -1,11 +1,12 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';  
+import { Patient } from '../models/patient';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  messageReceived = new EventEmitter<any>();  
+  patientReceived = new EventEmitter<Patient>();  
   connectionEstablished = new EventEmitter<Boolean>();  
   
     
@@ -39,10 +40,9 @@ export class MessageService {
       });  
   }  
   
-  private registerOnServerEvents(): void {  
-    this._hubConnection.on('ReceiveMessage', (data: any) => {  
-      console.log(data);
-      this.messageReceived.emit(data);  
+  private registerOnServerEvents(): void {
+    this._hubConnection.on('PatientAdded', (data: Patient) => {  
+      this.patientReceived.emit(data);  
     });  
   } 
 
